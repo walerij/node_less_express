@@ -2,13 +2,27 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Курсы от Валерия</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isHome}}  
         <li  class="active">
             <a href="/">Главная</a>
         </li>
+        {{else}}
         <li>
+            <a href="/">Главная</a>
+        </li>
+        {{/if}}
+        <li
+        {{#if isCourses}}
+                class="active"
+        {{/if}}
+        >
             <a href="/courses">Курсы</a>
         </li>
-        <li>
+        <li
+        {{#if isAdd}}
+                class="active"
+        {{/if}}
+        >
             <a href="/add">Добавить курс</a>
         </li>
       </ul>

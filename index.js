@@ -18,12 +18,26 @@ app.use(express.static('public'))
 
 app.get("/",(req,res)=>{
         
-        res.render('index')
+        res.render('index',{
+            title:"Главная страница",
+            isHome:true
+        })
 })
 
-app.get("/about",(req,res)=>{
+app.get("/add",(req,res)=>{
         
-    res.render('about') 
+    res.render('add',{
+        title:"Добавить курс",
+        isAdd: true
+    }) 
+})
+
+app.get("/courses",(req,res)=>{
+        
+    res.render('courses',{
+        title:"Курсы",
+        isCourses: true
+    }) 
 })
 
 
