@@ -71,6 +71,29 @@ static async getByID(id)
     return courses.find(c=>c.id==id)
 
 }    
+
+static async update(course){
+    const courses =await Course.getAll()
+    const idx =courses.findIndex(c=>c.id===course.id)
+    courses[idx] = course
+
+    return new Promise((resolve, reject)=>{
+        /*начало*/
+
+        fs.writeFile(
+            path.join(__dirname,'..','data','courses.json'),
+            JSON.stringify(courses),
+            (err)=>{
+                if(err) {reject(err) }
+                else resolve()
+            }
+        )
+
+        /*конец*/
+       })
+
+}
+
 }
 
 module.exports = Course
