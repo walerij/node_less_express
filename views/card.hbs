@@ -1,5 +1,5 @@
 <h2>Корзина</h2>
-
+<div id="card">
 {{#if courses.length}}
     <table>
         <thead>
@@ -15,7 +15,7 @@
               <td>{{title}}</td>
               <td>{{count}}</td>
               <td>
-                  <bouutn class="btn btn-small">
+                  <bouutn class="btn btn-small js-remove" data-id="{{id}}" >
                       Удалить
                   </bouutn>
               </td>
@@ -31,3 +31,4 @@
 {{else}}
     <p>Корзина пуста</p>
 {{/if}}
+</div>

@@ -48,6 +48,31 @@ class Card{
 
          })
     }
+
+    static async remove(id)
+    {
+        let card =await Card.fetch()
+        let idx = card.courses.findIndex(c=>c.id===id)
+        let course = card.courses[idx]
+        if(course.count===1)
+        {
+            //удалить
+            card.courses = card.courses.filter(c=>c.id!==id)
+        }
+        else
+        {
+            //изменить количество
+            card.courses[idx].count--
+        }
+       card.price -= course.price
+
+       return new Promise ((resolve, reject)=>{
+        fs.writeFile(p, JSON.stringify(card), err=>{
+            if(err) rejest(err)
+            else resolve(card)
+        })
+    })
+    }
 }
 
 module.exports=Card
