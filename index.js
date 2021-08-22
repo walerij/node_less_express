@@ -32,6 +32,12 @@ app.use('/card',cardRoutes)
 
 
 const PORT = process.env.PORT || 3000
+
+const user = walera
+
+
+const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
 app.listen(PORT,()=>{
     console.log('server started on port '+PORT)
 })
