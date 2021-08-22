@@ -3,6 +3,7 @@ const express = require('express')
 
 
 const path = require('path')
+const mongoose = require('mongoose')
 
 const exphbs=require('express-handlebars')
 
@@ -33,11 +34,20 @@ app.use('/card',cardRoutes)
 
 const PORT = process.env.PORT || 3000
 
-const user = walera
+
+async function start(){
+    try{
+    const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
+    await mongoose.connect(url,{useNewUrlParser:true})
+    app.listen(PORT,()=>{
+        console.log('server started on port '+PORT)
+        })
+    }
+    catch(e)
+    {console.log(e)}
+}
+
+start()
 
 
-const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
-app.listen(PORT,()=>{
-    console.log('server started on port '+PORT)
-})
