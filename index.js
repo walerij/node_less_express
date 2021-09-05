@@ -1,9 +1,9 @@
 const express = require('express')
 
-
+const mongoose = require('mongoose')
 
 const path = require('path')
-const mongoose = require('mongoose')
+
 
 const exphbs=require('express-handlebars')
 
@@ -12,6 +12,7 @@ const cardRoutes = require('./routes/card')
 const addRoutes  = require('./routes/add')
 const coursesRoutes = require('./routes/courses')
 const app = express()
+
 
 const hbs = exphbs.create({
     defaultLayout:'main',
@@ -37,7 +38,7 @@ const PORT = process.env.PORT || 3000
 
 async function start(){
     try{
-    const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/shop'
 
     await mongoose.connect(url,{useNewUrlParser:true})
     app.listen(PORT,()=>{
@@ -45,7 +46,9 @@ async function start(){
         })
     }
     catch(e)
-    {console.log(e)}
+    {
+        console.log(e)
+    }
 }
 
 start()
