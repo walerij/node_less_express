@@ -45,7 +45,7 @@ async function start(){
     try{
     const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/shop'
 
-    await mongoose.connect(url,{useNewUrlParser:true})
+    await mongoose.connect(url,{useNewUrlParser:true, useFindAndModify: false,useUnifiedTopology: true })
     app.listen(PORT,()=>{
         console.log('server started on port '+PORT)
         })
