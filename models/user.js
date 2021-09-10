@@ -37,6 +37,7 @@ userSchema.methods.addToCart = function(course)
         items[index].count =items[index].count+1
    }
 
+   
    else {
     items.push({
         courseId:course._id,
