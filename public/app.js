@@ -31,9 +31,9 @@ if ($card){
                             <td>${c.title}</td>
                             <td>${c.count}</td>
                             <td>
-                                <bouutn class="btn btn-small js-remove" data-id="${c.id}" >
+                                <button class="btn btn-small js-remove" data-id="${c.id}" >
                                     Удалить
-                                </bouutn>
+                                </button>
                             </td>
                             </tr>
                              `

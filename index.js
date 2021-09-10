@@ -17,7 +17,6 @@ const coursesRoutes = require('./routes/courses')
 const User = require('./models/user')
 const app = express()
 
-
 const hbs = exphbs.create({
     defaultLayout:'main',
     extname:'hbs'
@@ -49,9 +48,6 @@ app.use('/',homeRoutes)
 app.use('/add',addRoutes)
 app.use('/courses',coursesRoutes)
 app.use('/card',cardRoutes)
-
-
-
 
 
 const PORT = process.env.PORT || 3000
