@@ -30,7 +30,7 @@ app.set('views','views')
 
 app.use(async (req, res, next)=>{
     try{
-    const user =await User.findById('613589be7edc734a08898654')
+    const user =await User.findById('614eb33c479f1408842ae414')
     
     //let user = await User.findOne()
     req.user = user
@@ -57,7 +57,8 @@ const PORT = process.env.PORT || 3000
 
 async function start(){
     try{
-    const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/shop'
+    //const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/shop'
+    const url ='mongodb://localhost:27017/shop'
 
     await mongoose.connect(url,{useNewUrlParser:true, useFindAndModify: false,useUnifiedTopology: true })
 
