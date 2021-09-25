@@ -23,10 +23,13 @@ const hbs = exphbs.create({
     extname:'hbs'
     
 })
+
+
 app.engine('hbs',hbs.engine)
 
 app.set('view engine','hbs')
 app.set('views','views')
+
 
 app.use(async (req, res, next)=>{
     try{
@@ -64,6 +67,7 @@ async function start(){
 
     let candidate = await User.findOne()
     
+
     if(!candidate)
     {
         let user = new User({
