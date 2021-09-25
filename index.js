@@ -12,6 +12,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const homeRoutes = require('./routes/home')
 const cardRoutes = require('./routes/card')
 const addRoutes  = require('./routes/add')
+const authRoutes  = require('./routes/auth')
 const coursesRoutes = require('./routes/courses')
 const ordersRoutes = require('./routes/orders')
 
@@ -54,6 +55,7 @@ app.use('/add',addRoutes)
 app.use('/courses',coursesRoutes)
 app.use('/card',cardRoutes)
 app.use('/orders',ordersRoutes)
+app.use('/auth',authRoutes)
 
 const PORT = process.env.PORT || 3000
 
