@@ -36,21 +36,7 @@ app.set('view engine','hbs')
 app.set('views','views')
 
 
-app.use(async (req, res, next)=>{
-    try{
-    const user =await User.findById('614eb33c479f1408842ae414')
-    
-    //let user = await User.findOne()
-    req.user = user
-    //console.log("--"+req.user)
-    next()
-    }
-    catch(e)
-    {
 
-        console.log(e)
-    }
-})
 
 app.use(express.static(path.join(__dirname,'public')))
 app.use(express.urlencoded({extended:true}))
@@ -78,7 +64,7 @@ async function start(){
 
     await mongoose.connect(url,{useNewUrlParser:true, useFindAndModify: false,useUnifiedTopology: true })
 
-    let candidate = await User.findOne()
+    /* let candidate = await User.findOne()
     
 
     if(!candidate)
@@ -89,7 +75,7 @@ async function start(){
             cart: {items:[]}
         })
         await user.save()
-    }
+    } */
     
     app.listen(PORT,()=>{
         
