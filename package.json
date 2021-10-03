@@ -20,6 +20,7 @@
   "homepage": "https://github.com/walerij/node_less_express#readme",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
+    "connect-mongodb-session": "^3.1.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
